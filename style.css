@@ -1,16 +1,17 @@
-html,body {
-    scroll-behavior: smooth;
-    margin:0;
-    padding: 0;
-    max-width: 100%;
-    width:100%;
-
-}
-/* RESET DEFAULT MARGINS */
-* {
+/* GLOBAL RESET */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* HTML & BODY */
+html, body {
+    scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: hidden; /* prevents accidental horizontal overflow */
 }
 
 body {
@@ -20,108 +21,35 @@ body {
 
 /* HEADER */
 .header {
-     font-size: clamp(22px, 5vw, 40px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
+    padding: 15px 20px; /* reduced for mobile */
     background: linear-gradient(45deg, #6a11cb, #2575fc);
     color: white;
     position: sticky;
     top: 0;
     z-index: 100;
+    width: 100%;
+}
+
+/* LOGO */
+.header h1 {
+    font-size: clamp(20px, 5vw, 32px);
 }
 
 .header h1 a {
     color: white;
     text-decoration: none;
-    font-size: 1.5rem;
     font-weight: bold;
 }
 
+/* NAV */
 .header nav {
     display: flex;
-    gap: 20px;
+    gap: 16px;
+    flex-wrap: wrap; /* IMPORTANT for mobile */
 }
 
-.header nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.header nav a:hover {
-    text-decoration: underline;
-    text-decoration-color: #ffdd00;
-}
-
-/* HERO SECTION */
-.hero {
-    text-align: center;
-    padding: 150px 20px;
-    color: white;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-                url('https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg');
-    background-size: cover;
-    background-position: center;
-}
-
-.hero .btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 25px;
-    background: #6a11cb;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: 0.3s;
-}
-
-.hero .btn:hover {
-    background: #2575fc;
-}
-
-/* SECTIONS */
-section {
-    padding: 80px 20px;
-    max-width: 1000px;
-    margin: auto;
-}
-
-/* ABOUT */
-.about h3,
-.projects h3,
-.contact h3 {
-    margin-bottom: 20px;
-    color: #6a11cb;
-}
-
-/* PROJECTS GRID */
-.project-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.project-box {
-    flex: 1 1 250px;
-    padding: 20px;
-    border: 2px solid #6a11cb;
-    border-radius: 10px;
-    background-color: #f4f4f4;
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #222;
-    color: white;
-}
-nav a.active {
-    color: #ffdd00;
-    text-decoration: underline;
-}
-
+.header nav a
 
